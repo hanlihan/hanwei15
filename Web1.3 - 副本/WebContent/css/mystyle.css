@@ -1,0 +1,26 @@
+h1 {
+	color: blue;
+	margin: 0 auto;
+	text-align: center;
+}
+img{
+	width:100px;
+	height:100px;
+}
+#largeImg{
+	width: 420px; 
+	height: 266px;
+}
+
+
+.emp_contaner {
+	margin: 0 auto;
+	text-align: center;
+	width: 500px;
+	
+}
+  body {
+	text-align: center;
+	background-color: yellow;
+}
+

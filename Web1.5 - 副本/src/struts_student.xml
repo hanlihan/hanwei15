@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="test" namespace="/" extends="struts-default">
+		<action name="testuser" class="com.text.root.testStruts" >
+			<result>/success.jsp</result>
+			<result name="input">/add.jsp</result>  
+		</action>
+		<action name="testStrutsAction" class="com.text.root.testStrutsAction" >
+			<result>/success.jsp</result>
+			<result name="input">/add_test.jsp</result>  
+		</action>
+		<action name="testStrutsRequestAction" class="com.text.root.testStrutsRequestAction" >
+			<result>/success.jsp</result>
+			<result name="input">/add_test.jsp</result>  
+		</action>
+        
+	</package>
+</struts>

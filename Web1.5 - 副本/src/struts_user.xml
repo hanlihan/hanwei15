@@ -1,0 +1,29 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- 开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 所有匹配*.do的请求都由struts2处理 -->
+	<!-- <constant name="struts.action.extension" value="do" /> -->
+	<!-- <让struts2支持动态方法调用<default-action-ref name="index"/> -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    
+	<!-- package提供了将多个Action组织为一个模块的方式, package的名字必须是唯一的. namespace:定义package命名空间 
+		该命名空间影响到url的地址， 例如此命名空间为/test那么访问是的地址为http://localhost:8080/struts2/test/XX.action -->
+	<package name="student" namespace="/" extends="struts-default">
+	<default-action-ref name="default"/>
+		<global-allowed-methods>regex:.*</global-allowed-methods>
+
+		<action name="test_*" class="com.text.root.testStruts" method="{1}">
+			<result>/success.jsp</result>
+			<result name="ADD">/add.jsp</result>
+			<result name="UP">/up.jsp</result>
+			<result name="DELETE">/delete.jsp</result>
+		</action>
+		<action name="default">
+		     <result>/index.jsp</result>
+		</action>
+
+	</package>
+</struts>

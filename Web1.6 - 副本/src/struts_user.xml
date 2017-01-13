@@ -1,0 +1,26 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package name="user" namespace="/" extends="struts-default">
+		<global-allowed-methods>regex:.*</global-allowed-methods>
+		<action name="long" class="com.ittx.student.servlerStruts.Useraction">
+			<result>/main.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="user_*" class="com.ittx.student.servlerStruts.addUseraction" method="{1}">
+		    <result type="chain">user_GetUser</result>
+		    <result name="input">/jsp/user/addUser.jsp</result>
+			<result name="GET">/jsp/user/getUser.jsp</result>
+			<result name="FIND">/jsp/user/findUser_list.jsp</result>
+			<result name="FINDD">/jsp/user/findUser.jsp</result>
+		</action>
+		<action name="stu_*" class="com.ittx.student.servlerStruts.Studentaction" method="{1}">
+		    <result type="chain">stu_show</result>
+		    <result name="input">/jsp/student/addStu.jsp</result>
+		    <result name="list">/jsp/student/getStu.jsp</result>
+		    <result name="find">/jsp/student/findstu_list.jsp</result>
+		</action>
+	</package>
+</struts>
